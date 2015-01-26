@@ -6,7 +6,6 @@ function RunLength(str){
 		return 1 + str;
 	}
 	else {
-		debugger;
 		for (var i = 0; i < str.length; i++){
 			if (str[i] === prev){
 				count ++;
