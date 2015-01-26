@@ -1,0 +1,26 @@
+function RunLength(str){
+	var newStr = '';
+	var prev = '';
+	var count = 0;
+	if (str.length === 1){
+		return 1 + str;
+	}
+	else {
+		debugger;
+		for (var i = 0; i < str.length; i++){
+			if (str[i] === prev){
+				count ++;
+						}
+			else {
+				newStr += count + prev;
+				prev = str[i];
+				count = 1;				
+			}
+		}
+		newStr += count + prev; 
+	}
+	while (newStr[0] === '0'){
+		newStr = newStr.slice(1)
+	}
+	return newStr;
+}
