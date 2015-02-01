@@ -1,0 +1,8 @@
+function LongestWord(sen){
+var senArr = sen.split(' ');
+senArr.sort(function(a, b){
+	console.log(a + ' ' + b);
+  return b.length - a.length;
+});
+console.log(senArr[0]);
+}
