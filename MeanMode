@@ -1,17 +1,22 @@
-function meanEqualsMode (arr) {
+function MeanMode(arr){
 	var mode = {},
-		total = 0,
-		top = 0,
-		len = arr.length,
-		i = 0;
-	for (; i < len; i++) {
-		if (!mode[arr[i]]) {
-			mode[arr[i]] = 1;
-		} else {
-			mode[arr[i]] += 1;
+		sum = 0,
+		max = 0;
+	for (var i = 0; i < arr.length; i++){
+		if (mode[arr[i]]){
+			mode[arr[i]]++;
 		}
-		if (mode[arr[i]] > top) top = mode[arr[i]];
-		total += arr[i];
+		else {
+			mode[arr[i]] = 1;
+		}
+
+		if (mode[arr[i]] > max){
+			max = arr[i];
+		}
+
+		sum += arr[i];		
+
 	}
-	return (total / len) + ', ' + top;
+	return max === (sum / arr.length)
+	
 }
