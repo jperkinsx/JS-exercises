@@ -1,0 +1,17 @@
+function meanEqualsMode (arr) {
+	var mode = {},
+		total = 0,
+		top = 0,
+		len = arr.length,
+		i = 0;
+	for (; i < len; i++) {
+		if (!mode[arr[i]]) {
+			mode[arr[i]] = 1;
+		} else {
+			mode[arr[i]] += 1;
+		}
+		if (mode[arr[i]] > top) top = mode[arr[i]];
+		total += arr[i];
+	}
+	return (total / len) + ', ' + top;
+}
