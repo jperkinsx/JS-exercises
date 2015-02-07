@@ -1,0 +1,34 @@
+// array_pair_sum --> take 2 args, an array of sorted ints, and an amount. Find out if any pair of numbers in the array add up to the amount
+
+
+// binary search method
+
+function array_pair_sum(arr, amount){
+    var p1 = 0
+    var p2 = arr.length-1
+    
+    while (arr[p1] + arr[p2] !== amount) {
+        if (arr[p1] + arr[p2] > amount) {
+            p2--
+        }
+        else {
+            p1++
+        }
+        
+        if (p1 === p2) {return false;}
+    }
+    return true
+}
+
+// loop method
+
+function array_pair_sum(arr, amount){
+    for (var i = 0; i < arr.length -1; i++){
+        for (var j = i + 1; j < arr.length; j++){
+            if (arr[i] + arr[j] === amount){
+                return true;
+            }
+        }
+    }
+    return false;
+}   
