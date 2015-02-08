@@ -1,0 +1,9 @@
+function printUnicode(from, to){
+	var arr = [];
+
+	for (var i = from; i <= to; i++){
+		arr.push(String.fromCharCode(i));
+	}
+	
+	return arr;
+}
